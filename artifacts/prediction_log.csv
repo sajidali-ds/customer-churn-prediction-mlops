@@ -1,0 +1,4 @@
+CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,churn_probability,timestamp
+650,France,Female,38,5,50000.0,1,1,1,50000.0,0.4345594048500061,2026-07-05T21:03:50.371785
+650,France,Female,38,5,50000.0,1,1,1,50000.0,0.4345594048500061,2026-07-05T21:37:54.589255
+578,Germany,Male,41,4,49000.0,1,1,1,50000.0,0.7592281103134155,2026-07-05T21:38:23.959752

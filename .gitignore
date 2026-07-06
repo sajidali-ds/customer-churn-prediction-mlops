@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+logs/
+.pytest_cache/
+.DS_Store
+
+mlruns/
+mlartifacts/ 
+mlflow.db
+
+

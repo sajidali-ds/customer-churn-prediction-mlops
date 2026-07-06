@@ -1,0 +1,36 @@
+data:
+  raw_path: "Churn_Modelling.csv"
+  target_col: "Exited"
+  drop_cols: ["RowNumber", "CustomerId", "Surname"]
+  categorical_cols: ["Geography", "Gender"]
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+
+artifacts:
+  dir: "artifacts"
+  model_path: "artifacts/model.keras"
+  scaler_path: "artifacts/scaler.pkl"
+  gender_encoder_path: "artifacts/label_encoder_gender.pkl"
+  geo_encoder_path: "artifacts/onehot_encoder_geo.pkl"
+  feature_columns_path: "artifacts/feature_columns.pkl"
+  history_path: "artifacts/history.json"
+  metrics_path: "artifacts/metrics.json"
+
+model:
+  hidden_layers: [64, 32, 16]
+  dropout_rate: 0.3
+  activation: "relu"
+  output_activation: "sigmoid"
+  learning_rate: 0.001
+  batch_size: 32
+  epochs: 100
+  early_stopping_patience: 10
+  class_weighting: true
+
+logging:
+  log_dir: "logs"
+
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "churn-prediction"
