@@ -75,6 +75,13 @@ customer-churn-prediction-mlops/
 │
 ├── artifacts/
 │
+├── assets/
+│   └── images/
+│       ├── home.png
+│       ├── prediction.png
+│       ├── comparison.png
+│       └── monitoring.png
+│
 ├── src/
 │   ├── compare_models.py
 │   ├── data_preprocessing.py
@@ -94,8 +101,6 @@ customer-churn-prediction-mlops/
 ├── README.md
 └── Churn_Modelling.csv
 ```
-
----
 
 # ⚙ Machine Learning Pipeline
 
