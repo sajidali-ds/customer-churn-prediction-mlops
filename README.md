@@ -132,6 +132,34 @@ Drift Detection
 
 ---
 
+---
+
+# 📸 Application Preview
+
+## 🏠 Home Page
+
+![Home Page](assets/images/home.png)
+
+---
+
+## 🎯 Prediction Page
+
+![Prediction](assets/images/prediction.png)
+
+---
+
+## 📊 Model Comparison
+
+![Model Comparison](assets/images/comparison.png)
+
+---
+
+## 📉 Monitoring Dashboard
+
+![Monitoring](assets/images/monitoring.png)
+
+---
+
 # 🚀 Getting Started
 
 ## Clone Repository
