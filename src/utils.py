@@ -1,4 +1,3 @@
-"""Small shared utilities: config loading and reproducibility helpers."""
 import json
 import os
 import random
