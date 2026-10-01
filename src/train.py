@@ -1,8 +1,3 @@
-"""
-End-to-end training pipeline.
-
-Run with:  python -m src.train
-"""
 import datetime
 import os
 
