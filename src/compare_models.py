@@ -1,14 +1,3 @@
-"""
-Compare the ANN against classical ML classification algorithms on the exact
-same preprocessed train/test split, using the exact same metrics.
-
-Run with:  python -m src.compare_models
-
-Must be run AFTER src/train.py, since it reuses the fitted encoders/scaler
-saved by training (so every model sees identical features) and reads the
-ANN's own test metrics from artifacts/metrics.json to include it fairly in
-the same table.
-"""
 import json
 import time
 
@@ -55,9 +44,6 @@ except ImportError:
 
 
 def get_same_split_as_training(config: dict):
-    """Reproduces the identical train/val/test split train.py used, using
-    the encoders/scaler already fitted and saved by training — so classical
-    ML models here see the exact same features and split as the ANN did."""
     df = load_raw_data(config["data"]["raw_path"])
     X, y = split_features_target(df, config)
 
@@ -67,8 +53,7 @@ def get_same_split_as_training(config: dict):
     X_train, X_val, X_test, y_train, y_val, y_test = train_val_test_split(
         X_encoded, y, config
     )
-    # Classical ML models don't need a separate early-stopping validation
-    # set, so fold val back into train for a slightly larger training set.
+
     X_train_full = pd.concat([X_train, X_val])
     y_train_full = pd.concat([y_train, y_val])
 
@@ -97,8 +82,6 @@ def run_comparison():
         metrics["train_time_sec"] = round(train_time, 3)
         results.append(metrics)
 
-    # Bring in the ANN's own test metrics computed by train.py, so it's
-    # scored on the identical test set with the identical function.
     try:
         with open(config["artifacts"]["metrics_path"]) as f:
             ann_metrics = json.load(f)
