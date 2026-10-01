@@ -1,7 +1,4 @@
-"""
-Single-customer inference, reusing the exact preprocessing pipeline from
-training. Can be run standalone:  python -m src.predict
-"""
+
 import pandas as pd
 from tensorflow import keras
 
