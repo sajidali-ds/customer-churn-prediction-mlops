@@ -1,5 +1,3 @@
-"""ANN model definition, kept separate from training loop so it can be
-unit-tested and reused (e.g. for hyperparameter search) independently."""
 from tensorflow import keras
 from tensorflow.keras import layers
 
