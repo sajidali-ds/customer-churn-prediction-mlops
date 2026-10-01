@@ -1,8 +1,3 @@
-"""
-Streamlit UI for the churn predictor.
-
-Run with:  streamlit run app.py
-"""
 import os
 
 import pandas as pd
