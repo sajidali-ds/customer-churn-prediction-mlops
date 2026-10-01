@@ -1,11 +1,3 @@
-"""
-Lightweight production monitoring: logs every prediction the app makes,
-and detects data drift by comparing the distribution of incoming requests
-against the distribution the model was trained on (a Kolmogorov-Smirnov
-test per numeric feature). No external monitoring service required —
-everything is stored as flat files under artifacts/, so it works the same
-locally or in a container.
-"""
 import csv
 import datetime
 import json
