@@ -8,9 +8,6 @@ from src.utils import load_config
 
 
 class ChurnPredictor:
-    """Loads the trained model + preprocessing artifacts once, then serves
-    predictions cheaply. Use one instance per process (e.g. one per
-    Streamlit session) rather than reloading files on every call."""
 
     def __init__(self, config_path: str = "config.yaml"):
         self.config = load_config(config_path)
@@ -23,11 +20,6 @@ class ChurnPredictor:
         ) = load_artifacts(self.config)
 
     def predict(self, customer: dict) -> dict:
-        """customer: dict with raw feature keys, e.g.
-        {"CreditScore": 600, "Geography": "France", "Gender": "Male",
-         "Age": 40, "Tenure": 3, "Balance": 60000, "NumOfProducts": 2,
-         "HasCrCard": 1, "IsActiveMember": 1, "EstimatedSalary": 50000}
-        """
         df = pd.DataFrame([customer])
         X = transform_features(df, self.gender_encoder, self.geo_encoder, self.feature_columns)
         X_scaled = self.scaler.transform(X)
