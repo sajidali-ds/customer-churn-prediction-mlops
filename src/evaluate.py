@@ -1,6 +1,3 @@
-"""Evaluation metrics. Accuracy alone is misleading on an imbalanced churn
-dataset (~20% positive class), so this reports precision/recall/F1/ROC-AUC
-and a confusion matrix as well."""
 import numpy as np
 from sklearn.metrics import (
     accuracy_score,
