@@ -1,11 +1,3 @@
-"""
-Data loading and preprocessing.
-
-Design goal: the exact same transformation code path is used at training
-time and at inference time (train.py and predict.py / app.py both call
-`transform_features`). In the original project the Streamlit app re-implemented
-encoding by hand, which is a common source of train/serve skew bugs.
-"""
 import joblib
 import pandas as pd
 from sklearn.compose import ColumnTransformer
@@ -56,7 +48,6 @@ def transform_features(X: pd.DataFrame, gender_encoder: LabelEncoder,
     X = pd.concat([X, geo_df], axis=1)
 
     if feature_columns is not None:
-        # Guarantees identical column order/set at train and inference time.
         for col in feature_columns:
             if col not in X.columns:
                 X[col] = 0
